@@ -12,11 +12,17 @@
         color: $morning-sky;
         font-weight: 600;
         font-size: 1.5em;
+        @media only screen and (max-width: $mobile) {
+            text-align: left;
+        }
     }
 
     &__subHeader{
         @include subheader;
         min-height: 42px;
+        @media only screen and (max-width: $mobile) {
+            display:none;
+        }
     }
   
     &__answerArea {
@@ -29,6 +35,9 @@
         @media only screen and (max-width: $tablet) {
             border-radius: unset;
         }
+        @media only screen and (max-width: $mobile) {
+            display:contents;
+        }
 
     }
 
@@ -37,12 +46,19 @@
         display: grid;
         grid-auto-flow: column;
         grid-gap: 10px;
+        @media only screen and (max-width: $tablet) {
+            grid-auto-flow:row;
+            grid-template-columns: 1fr 1fr;
+        }
     }
 
     &__submitButtonContainer {
         height: 50px;
         .submitButton {
             float: right;
+            @media only screen and (max-width: $mobile){
+                float:none;
+            }
         }
     }
 }
